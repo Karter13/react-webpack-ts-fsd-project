@@ -12,7 +12,10 @@
     "allowJs": true,
     "moduleResolution": "node",
     // for absolute import
-    //    "baseUrl": ".",
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"]
+    },
     // esModuleInterop позволяет работать с пакетами, которые используют
     //common js как с обычными пакетами c помощью import (require() module.export) = common js
     "esModuleInterop": true,
