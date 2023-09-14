@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    // куда собираем
+    "outDir": "./dist/",
+    // указывает на отсутствие типизации
+    "noImplicitAny": true,
+    "module": "ESNext",
+    // В какую спецификацию компилируем
+    "target": "es5",
+    "jsx": "react-jsx",
+    // кмпилятор обрабатывает и TS и JS файлы
+    "allowJs": true,
+    "moduleResolution": "node",
+    // for absolute import
+    //    "baseUrl": ".",
+    // esModuleInterop позволяет работать с пакетами, которые используют
+    //common js как с обычными пакетами c помощью import (require() module.export) = common js
+    "esModuleInterop": true,
+    // Если какая-либо библиотека не имеет default import,
+    //лоалеры вроде ts-loader или babel-loader автоматически создают их
+    // вместо import * as path from 'path'
+    // можно писать import path from 'path'
+    "allowSyntheticDefaultImports": true
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}
