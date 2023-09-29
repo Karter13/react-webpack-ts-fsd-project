@@ -1,8 +1,9 @@
 {
   "Тестовый перевод": "Test translation",
-  "Язык": "English",
+  "Язык": "Russian",
   "Страница не найдена": "Page not found",
   "Произошла не предвиденная ошибка": "An unexpected error occurred",
   "Обновить страницу": "Refresh the page",
-  "throw error": "throw error"
+  "throw error": "throw error",
+  "Переключить": "Toggle"
 }
