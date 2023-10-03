@@ -17,7 +17,7 @@ export const LangSwitcher = ({ className, short }: LangSwitcherProps) => {
     return (
         <Button
             onClick={toggle}
-            theme={ThemeButton.CLEAR}
+            theme={ThemeButton.CLEAR_INVERTED}
             className={classNames('', {}, [className])}
         >
             {t(short ? 'Короткий язык' : 'Язык')}
