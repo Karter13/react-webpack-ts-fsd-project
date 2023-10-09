@@ -9,5 +9,7 @@
   "Переключить": "Toggle",
   "Войти": "Enter",
   "Имя пользователя": "Username",
-  "Пароль": "Password"
+  "Пароль": "Password",
+  "Форма авторизации": "Authorization form",
+  "Вы ввели неверный логин или пароль": "You entered an incorrect username or password"
 }

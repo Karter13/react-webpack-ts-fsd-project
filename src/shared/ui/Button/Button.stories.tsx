@@ -44,6 +44,7 @@ OutlineClear.args = {
     children: 'Text',
     theme: ThemeButton.OUTLINE,
 };
+
 export const OutlineClearSizeM = Template.bind({});
 OutlineClearSizeM.args = {
     children: 'Text',
@@ -135,4 +136,11 @@ SquareButtonSizeXL.args = {
     theme: ThemeButton.BACKGROUND_INVERTED,
     square: true,
     size: SizeButton.XL,
+};
+
+export const DisabledButton = Template.bind({});
+DisabledButton.args = {
+    children: 'Disabled',
+    theme: ThemeButton.OUTLINE,
+    disabled: true,
 };

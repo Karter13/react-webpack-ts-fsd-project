@@ -10,14 +10,14 @@ import ErrorBoundary from 'app/providers/ErrorBoundary/ui/ErrorBoundary';
 // import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 render(
-    <StoreProvider>
-        <BrowserRouter>
+    <BrowserRouter>
+        <StoreProvider>
             <ErrorBoundary>
                 <ThemeProvider>
                     <App />
                 </ThemeProvider>
             </ErrorBoundary>
-        </BrowserRouter>
-    </StoreProvider>,
+        </StoreProvider>
+    </BrowserRouter>,
     document.getElementById('root'),
 );
