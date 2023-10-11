@@ -36,3 +36,15 @@ LoginFormDark.decorators = [
         },
     }),
 ];
+
+export const LoginFormWithError = Template.bind({});
+LoginFormWithError.args = {};
+LoginFormWithError.decorators = [StoreDecorator({
+    loginForm: { username: '123', password: 'asd', error: 'ERROR' },
+})];
+
+export const LoginFormLoading = Template.bind({});
+LoginFormLoading.args = {};
+LoginFormLoading.decorators = [StoreDecorator({
+    loginForm: { isLoading: true },
+})];
