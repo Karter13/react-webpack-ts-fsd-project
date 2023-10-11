@@ -6,7 +6,7 @@
     "noImplicitAny": true,
     "module": "ESNext",
     // В какую спецификацию компилируем
-    "target": "es5",
+    "target": "ES5",
     "jsx": "react-jsx",
     // кмпилятор обрабатывает и TS и JS файлы
     "allowJs": true,
@@ -23,7 +23,11 @@
     //лоалеры вроде ts-loader или babel-loader автоматически создают их
     // вместо import * as path from 'path'
     // можно писать import path from 'path'
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "lib": [
+      "es2017",
+      "DOM"
+    ]
   },
   "ts-node": {
     "compilerOptions": {

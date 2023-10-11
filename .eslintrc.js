@@ -47,6 +47,7 @@ module.exports = {
             ignoreAttribute: [
                 'to',
                 'data-testid',
+                'name',
             ],
         }],
         'max-len': ['error', {
