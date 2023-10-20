@@ -6,10 +6,11 @@
     "noImplicitAny": true,
     "module": "ESNext",
     // В какую спецификацию компилируем
-    "target": "ES5",
+    "target": "esnext",
     "jsx": "react-jsx",
     // кмпилятор обрабатывает и TS и JS файлы
     "allowJs": true,
+    "strict": true,
     "moduleResolution": "node",
     // for absolute import
     "baseUrl": ".",
