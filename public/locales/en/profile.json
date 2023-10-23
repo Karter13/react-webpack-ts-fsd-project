@@ -3,5 +3,7 @@
   "Профиль": "Profile",
   "Редактировать": "Edit",
   "Ваше имя": "Your name",
-  "Ваша фамилимя": "Your lastname"
+  "Ваша фамилимя": "Your lastname",
+  "Произощла ошибка при загрузке файла!": "Error loading profile!",
+  "Попробуйте обновить страницу": "Try refreshing the page"
 }
