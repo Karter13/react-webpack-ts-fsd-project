@@ -1,5 +1,13 @@
-import { Currency } from 'entities/Currency';
-import { Country } from 'entities/Country';
+import { Currency } from '../../../Currency';
+import { Country } from '../../../Country';
+
+export enum ValidateProfileError {
+    INCORRECT_USER_DATA = 'INCORRECT_USER_DATA',
+    INCORRECT_USER_AGE = 'INCORRECT_USER_AGE',
+    INCORRECT_USER_COUNTRY = 'INCORRECT_USER_COUNTRY',
+    NO_DATA = 'NO_DATA',
+    SERVER_ERROR = 'SERVER_ERROR',
+}
 
 export interface Profile {
     first?: string,
@@ -18,4 +26,5 @@ export interface ProfileSchema {
     readonly?: boolean;
     isLoading?: boolean;
     error?: string;
+    validateErrors?: ValidateProfileError[];
 }

@@ -2,16 +2,22 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useDispatch/useDispatch';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country/model/types/country';
 import {
     fetchProfileData,
-    getProfileData, getProfileError, getProfileForm,
-    getProfileIsLoading, getProfileReadonly, profileActions,
+    getProfileError,
+    getProfileForm,
+    getProfileIsLoading,
+    getProfileReadonly,
+    getProfileValidateErrors,
+    profileActions,
     ProfileCard,
     profileReducer,
+    ValidateProfileError,
 } from '../../../entities/Profile';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
@@ -31,10 +37,21 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     const isLoading = useSelector(getProfileIsLoading);
     const error = useSelector(getProfileError);
     const readOnly = useSelector(getProfileReadonly);
+    const validateErrors = useSelector(getProfileValidateErrors);
+
+    const validateErrorTranslates = {
+        [ValidateProfileError.NO_DATA]: t('Данные не указаны'),
+        [ValidateProfileError.SERVER_ERROR]: t('Серверная ошибка при сохранении'),
+        [ValidateProfileError.INCORRECT_USER_AGE]: t('Не корректный возраст'),
+        [ValidateProfileError.INCORRECT_USER_DATA]: t('Имя и фамилия обязательны'),
+        [ValidateProfileError.INCORRECT_USER_COUNTRY]: t('Некорректный регион'),
+    };
 
     useEffect(() => {
-        // @ts-ignore
-        dispatch(fetchProfileData());
+        if (__PROJECT__ !== 'storybook') {
+            // @ts-ignore
+            dispatch(fetchProfileData());
+        }
     }, [dispatch]);
 
     const onChangeFirstName = useCallback((value?: string) => {
@@ -69,6 +86,13 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
         >
             <div className={classNames('', {}, [className])}>
                 <ProfilePageHeader />
+                {validateErrors?.length && validateErrors.map((err) => (
+                    <Text
+                        key={err}
+                        text={validateErrorTranslates[err]}
+                        theme={TextTheme.ERROR}
+                    />
+                ))}
                 <ProfileCard
                     data={formData}
                     isError={error}
