@@ -1,22 +1,18 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { ArticleType, ArtikleBlockType } from '../../../../entities/Article/model/types/article';
-import { Article } from '../../../../entities/Article';
-import ArticleDetailsPage from './ArticleDetailsPage';
+import { Article, ArticleType, ArtikleBlockType } from '../../model/types/article';
+import { ArticleDetails } from './ArticleDetails';
 
 export default {
-    title: 'pages/ArticleDetailsPage',
-    component: ArticleDetailsPage,
+    title: 'entities/ArticleDetails',
+    component: ArticleDetails,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof ArticleDetailsPage>;
+} as ComponentMeta<typeof ArticleDetails>;
 
-const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => <ArticleDetailsPage {...args} />;
+const Template: ComponentStory<typeof ArticleDetails> = (args) => <ArticleDetails {...args} />;
 
 const article: Article = {
     id: '1',
@@ -88,10 +84,26 @@ const article: Article = {
     ],
 };
 
-export const ArticleDetailsPagePrimary = Template.bind({});
-ArticleDetailsPagePrimary.args = {};
-ArticleDetailsPagePrimary.decorators = [StoreDecorator({
+export const ArticleDetailsPrimary = Template.bind({});
+ArticleDetailsPrimary.args = {};
+ArticleDetailsPrimary.decorators = [StoreDecorator({
     articleDetails: {
         data: article,
+    },
+})];
+
+export const ArticleDetailsPrimaryLoading = Template.bind({});
+ArticleDetailsPrimaryLoading.args = {};
+ArticleDetailsPrimaryLoading.decorators = [StoreDecorator({
+    articleDetails: {
+        isLoading: true,
+    },
+})];
+
+export const ArticleDetailsPrimaryError = Template.bind({});
+ArticleDetailsPrimaryError.args = {};
+ArticleDetailsPrimaryError.decorators = [StoreDecorator({
+    articleDetails: {
+        error: 'ERROR',
     },
 })];
