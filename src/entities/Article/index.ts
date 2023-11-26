@@ -6,3 +6,5 @@ export {
     articleDetailsActions,
     articleDetailsReducer,
 } from './model/slice/articleDetailsSlice';
+
+export { getArticleDetailsData } from './model/selectors/articleDetails';

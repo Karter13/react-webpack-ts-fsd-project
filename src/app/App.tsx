@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AppRouter } from 'app/providers/router';
 import { Navbar } from 'widgets/Navbar';
 import { SideBar } from 'widgets/SideBar';
-import { getUserInited, userActions } from 'entities/User';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { getUserInited, userActions } from '../entities/User';
 import { useTheme } from './providers/ThemeProvider';
 
 const App = () => {
