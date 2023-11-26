@@ -3,8 +3,8 @@ import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useSelector } from 'react-redux';
+import { SideBarItemType } from 'widgets/SideBar/model/types/sidebar';
 import { getUserAuthData } from '../../../../entities/User';
-import { SideBarItemType } from '../../model/items';
 import cls from './SideBarItem.module.scss';
 
 interface SideBarItemProps {
