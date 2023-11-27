@@ -1,3 +1,5 @@
+import { User } from '../../../User';
+
 export enum ArtikleBlockType {
     TEXT = 'TEXT',
     CODE = 'CODE',
@@ -9,7 +11,7 @@ export interface ArticleBlockBase {
     type: ArtikleBlockType,
 }
 
-export interface ArticleCodeBlock extends ArticleBlockBase{
+export interface ArticleCodeBlock extends ArticleBlockBase {
     type: ArtikleBlockType.CODE;
     code: string;
 }
@@ -27,8 +29,8 @@ export interface ArticleTextBlock extends ArticleBlockBase {
 }
 
 export type ArticleBlock = ArticleCodeBlock
-    | ArticleImageBlock
-    | ArticleTextBlock
+    |ArticleImageBlock
+    |ArticleTextBlock
 
 export enum ArticleType {
     IT = 'IT',
@@ -36,9 +38,15 @@ export enum ArticleType {
     ECONOMICS = 'ECONOMICS',
 }
 
+export enum ArticleView {
+    BIG = 'BIG',
+    SMALL = 'SMALL',
+}
+
 export interface Article {
     id: string;
     title: string;
+    user: User;
     subtitle: string;
     img: string;
     views: number;
